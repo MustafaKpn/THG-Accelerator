@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <title>ON Running</title>
+  </head>
+
+  <body>
+    <!-- A -->
+    <div class="header">
+      <!-- 1 -->
+      <div class="category" style="list-style-type: none">
+        <li>Women</li>
+        <li>Men</li>
+        <li>Kids</li>
+        <li>Sports</li>
+        <li>Brands</li>
+        <li>New</li>
+        <li>Sale</li>
+      </div>
+      <!-- 2 -->
+      <div class="icons">
+        <div class="icon">
+          <div class="iconimage">
+            <img src="./svgs/bag.svg" />
+          </div>
+          <div class="icontext">
+            <p>Cart</p>
+          </div>
+        </div>
+        <div class="icon">
+          <div class="iconimage">
+            <img src="./svgs/heart.svg" />
+          </div>
+          <div class="icontext">
+            <p>Wishlist</p>
+          </div>
+        </div>
+        <div class="icon">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQdztTDcpZ2pFqwWDYwSXbvZq5nzJYg5cn8w&s"
+            alt="Cart Icon"
+            width="40px"
+            height="40px"
+            style="padding: 5px 1px 1px 0px; margin-top: 27px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- B -->
+    <div class="tags_header">
+      <p>Clothes and Shoes</p>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvWg-6v1TKJcyFhSUwQ754dmOKTvt4QyMuFQ&s"
+        width="4px"
+        height="4px"
+      />
+      <p>Shoes</p>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvWg-6v1TKJcyFhSUwQ754dmOKTvt4QyMuFQ&s"
+        width="4px"
+        height="4px"
+      />
+      <p>ON Running</p>
+    </div>
+
+    <!-- C -->
+    <div class="main">
+      <!-- C1-->
+      <div class="pictures">
+        <!-- 1.1 -->
+        <div class="big_picture">
+          <img src="./svgs/image1.avif" style="border-radius: 10px" />
+        </div>
+        <!-- 1.2 -->
+        <div class="small_pictures">
+          <img src="./svgs/image2.avif" style="border-radius: 10px" />
+          <img src="./svgs/image3.avif" style="border-radius: 10px" />
+          <img src="./svgs/image4.avif" style="border-radius: 10px" />
+          <img src="./svgs/image5.avif" style="border-radius: 10px" />
+          <button>+4 more</button>
+        </div>
+      </div>
+
+      <!-- C2 -->
+      <div class="product_details">
+        <!-- 1 -->
+        <div class="onrunning_header">
+          <div class="logo">
+            <img
+              src="./svgs/brand-logo.jpg"
+              width="40rem"
+              height="40rem"
+              style="border-radius: 10rem"
+            />
+            <span>ON Running</span>
+          </div>
+          <div class="ref">
+            <span>HR1325R008</span>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="product_name">
+          <span>ON Women's Cloud 5 Mesh Running Trainers</span>
+        </div>
+
+        <!-- 3 -->
+        <div class="rating">
+          <!-- 3.1 -->
+          <div class="stars">
+            <span class="material-symbols-outlined"> star </span>
+            <span class="material-symbols-outlined"> star </span>
+            <span class="material-symbols-outlined"> star </span>
+            <span class="material-symbols-outlined"> star </span>
+            <span class="material-symbols-outlined"> star </span>
+          </div>
+          <!-- 3.2 -->
+          <div class="rating_text">No reviews yet</div>
+        </div>
+
+        <!-- 4 -->
+        <div class="price">
+          <span>£130.00</span>
+        </div>
+
+        <!-- 5 -->
+        <div class="size_description">
+          <span>Size</span>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvWg-6v1TKJcyFhSUwQ754dmOKTvt4QyMuFQ&s"
+            width="4px"
+            height="4px"
+          />
+          <p class="uk_women">UK Women</p>
+        </div>
+
+        <!-- 6 -->
+        <div class="size_buttons">
+          <input type="checkbox" id="option1" onclick="onlyOne(this)" />
+          <label for="option1">3</label>
+
+          <input type="checkbox" id="option2" onclick="onlyOne(this)" />
+          <label for="option2">4</label>
+
+          <input type="checkbox" id="option3" onclick="onlyOne(this)" />
+          <label for="option3">4.5</label>
+
+          <input type="checkbox" id="option4" onclick="onlyOne(this)" />
+          <label for="option4">5</label>
+
+          <input type="checkbox" id="option5" onclick="onlyOne(this)" />
+          <label for="option5">5.5</label>
+
+          <input type="checkbox" id="option6" onclick="onlyOne(this)" />
+          <label for="option6">6</label>
+
+          <input type="checkbox" id="option7" onclick="onlyOne(this)" />
+          <label for="option7">6.5</label>
+
+          <input type="checkbox" id="option8" onclick="onlyOne(this)" />
+          <label for="option8">7</label>
+
+          <input type="checkbox" id="option9" onclick="onlyOne(this)" />
+          <label for="option9">8</label>
+          <script>
+            // Function to allow only one checkbox to be selected
+            function onlyOne(checkbox) {
+              const checkboxes = document.querySelectorAll(
+                'input[type="checkbox"]'
+              );
+              checkboxes.forEach((item) => {
+                if (item !== checkbox) {
+                  item.checked = false;
+                }
+              });
+            }
+          </script>
+        </div>
+        <span class="size_guide">Size guide</span>
+
+        <!-- 7 -->
+        <div class="action_icons">
+          <!-- 7.1 -->
+          <div class="add_to_cart">
+            <button>
+              <span class="material-symbols-outlined">shopping_bag</span>
+              <span>Add to cart</span>
+            </button>
+          </div>
+          <!-- 7.2 -->
+          <div class="add_wishlist">
+            <button><img src="svgs/heart.svg" /></button>
+          </div>
+        </div>
+
+        <div class="delivery">
+          <img class="delivery_icon" src="svgs/truck.svg" />
+          <span class="delivery_text">Free delivery on orders over £30</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
