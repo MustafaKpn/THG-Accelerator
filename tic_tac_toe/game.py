@@ -1,6 +1,6 @@
 import random
 import os
-
+import time
 
 def make_board():
     dimensions = []
@@ -78,8 +78,6 @@ class game:
         
 
     def draw_board(self):
-
-
         print(str(game.dimensions[0].element) + " | " + str(game.dimensions[1].element) + " | " + str(game.dimensions[2].element))
         print("_" + "_|_" + "_" + "_|_" + "_")
         print(" " + " | " + " " + " | " + " ")
@@ -94,6 +92,7 @@ class game:
 def tic_tac_toe(player1_name, player2_name):
     GREEN = "\033[0;32m" 
     CYAN = "\033[0;35m"
+    YELLOW = "\033[0;33m"
 
     player1 = player(player1_name)
     player2 = player(player2_name)
@@ -102,11 +101,19 @@ def tic_tac_toe(player1_name, player2_name):
     players[1].symbol = CYAN + "O" + "\033[0m"
 
     match = game(player1, player2)
-
+    os.system("clear") 
+    print("------------------------------------------")
+    print("---------------Tic Tac Toe----------------")
+    print("------------------------------------------")
+    time.sleep(1)
+    print("{} and {}, welcome to the game".format(player1.name, player2.name))
+    time.sleep(1)
+    print("Please wait until the game is launched..\n")
+    time.sleep(2)
 
     while (match.check_board() == False) and (len(match.played) != 9):
         
-        print("{} it's your turn".format(players[0].name))
+        print("{} it's your turn\nYour symbol is: {}".format(YELLOW + players[0].name + "\033[0m", players[0].symbol))
         x = input("Enter the number of row:")
         y = input("Enter the number of column:")
 
