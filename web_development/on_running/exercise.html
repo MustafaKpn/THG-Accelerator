@@ -1,7 +1,10 @@
 <!DOCTYPE html>
+
+<!-- Adding a comment to be able to make a pull request -->
 <html lang="en">
   <head>
     <link rel="stylesheet" href="style.css" />
+    <script src="interact.js" defer></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -29,16 +32,20 @@
       <!-- 2 -->
       <div class="icons">
         <div class="icon">
-          <div class="iconimage">
-            <img src="./svgs/bag.svg" />
+          <div class="iconimage cart">
+            <span class="material-symbols-outlined" id="shoppingBagIcon">
+              shopping_bag
+            </span>
+            <span class="cartQuantity"></span>
           </div>
-          <div class="icontext">
-            <p>Cart</p>
-          </div>
+          <p class="cartIcon">Cart</p>
         </div>
+
         <div class="icon">
           <div class="iconimage">
-            <img src="./svgs/heart.svg" />
+            <span class="material-symbols-outlined" id="wishlistIcon">
+              favorite
+            </span>
           </div>
           <div class="icontext">
             <p>Wishlist</p>
@@ -79,14 +86,34 @@
       <div class="pictures">
         <!-- 1.1 -->
         <div class="big_picture">
-          <img src="./svgs/image1.avif" style="border-radius: 10px" />
+          <img
+            class="mainPic"
+            src="./svgs/image1.avif"
+            style="border-radius: 10px"
+          />
         </div>
         <!-- 1.2 -->
         <div class="small_pictures">
-          <img src="./svgs/image2.avif" style="border-radius: 10px" />
-          <img src="./svgs/image3.avif" style="border-radius: 10px" />
-          <img src="./svgs/image4.avif" style="border-radius: 10px" />
-          <img src="./svgs/image5.avif" style="border-radius: 10px" />
+          <img
+            src="./svgs/image2.avif"
+            style="border-radius: 10px"
+            onclick="handleImageClick(this)"
+          />
+          <img
+            src="./svgs/image3.avif"
+            style="border-radius: 10px"
+            onclick="handleImageClick(this)"
+          />
+          <img
+            src="./svgs/image4.avif"
+            style="border-radius: 10px"
+            onclick="handleImageClick(this)"
+          />
+          <img
+            src="./svgs/image5.avif"
+            style="border-radius: 10px"
+            onclick="handleImageClick(this)"
+          />
           <button>+4 more</button>
         </div>
       </div>
@@ -130,7 +157,7 @@
 
         <!-- 4 -->
         <div class="price">
-          <span>£130.00</span>
+          <span class="priceTag">£130.00</span>
         </div>
 
         <!-- 5 -->
@@ -146,45 +173,77 @@
 
         <!-- 6 -->
         <div class="size_buttons">
-          <input type="checkbox" id="option1" onclick="onlyOne(this)" />
+          <input
+            type="checkbox"
+            name="3"
+            id="option1"
+            onclick="onlyOne(this)"
+          />
           <label for="option1">3</label>
 
-          <input type="checkbox" id="option2" onclick="onlyOne(this)" />
+          <input
+            type="checkbox"
+            name="4"
+            id="option2"
+            onclick="onlyOne(this)"
+          />
           <label for="option2">4</label>
 
-          <input type="checkbox" id="option3" onclick="onlyOne(this)" />
+          <input
+            type="checkbox"
+            name="4.5"
+            id="option3"
+            onclick="onlyOne(this)"
+          />
           <label for="option3">4.5</label>
 
-          <input type="checkbox" id="option4" onclick="onlyOne(this)" />
+          <input
+            type="checkbox"
+            name="5"
+            id="option4"
+            onclick="onlyOne(this)"
+          />
           <label for="option4">5</label>
 
-          <input type="checkbox" id="option5" onclick="onlyOne(this)" />
+          <input
+            type="checkbox"
+            name="5.5"
+            id="option5"
+            onclick="onlyOne(this)"
+          />
           <label for="option5">5.5</label>
 
-          <input type="checkbox" id="option6" onclick="onlyOne(this)" />
+          <input
+            type="checkbox"
+            name="6"
+            id="option6"
+            onclick="onlyOne(this)"
+          />
           <label for="option6">6</label>
 
-          <input type="checkbox" id="option7" onclick="onlyOne(this)" />
+          <input
+            type="checkbox"
+            name="6.5"
+            id="option7"
+            onclick="onlyOne(this)"
+          />
           <label for="option7">6.5</label>
 
-          <input type="checkbox" id="option8" onclick="onlyOne(this)" />
+          <input
+            type="checkbox"
+            name="7"
+            id="option8"
+            onclick="onlyOne(this)"
+          />
           <label for="option8">7</label>
 
-          <input type="checkbox" id="option9" onclick="onlyOne(this)" />
+          <input
+            type="checkbox"
+            name="8"
+            id="option9"
+            onclick="onlyOne(this)"
+          />
           <label for="option9">8</label>
-          <script>
-            // Function to allow only one checkbox to be selected
-            function onlyOne(checkbox) {
-              const checkboxes = document.querySelectorAll(
-                'input[type="checkbox"]'
-              );
-              checkboxes.forEach((item) => {
-                if (item !== checkbox) {
-                  item.checked = false;
-                }
-              });
-            }
-          </script>
         </div>
         <span class="size_guide">Size guide</span>
 
@@ -192,20 +251,78 @@
         <div class="action_icons">
           <!-- 7.1 -->
           <div class="add_to_cart">
-            <button>
+            <button class="cart_button" onclick="add_to_cart(this)">
               <span class="material-symbols-outlined">shopping_bag</span>
-              <span>Add to cart</span>
+              <span class="addToCartText">Add to cart</span>
             </button>
           </div>
           <!-- 7.2 -->
           <div class="add_wishlist">
-            <button><img src="svgs/heart.svg" /></button>
+            <button class="addToWishlistButton">
+              <img
+                class="addToWishlistImage"
+                src="svgs/heart.svg"
+                onclick="addToWishlist(this)"
+              />
+            </button>
           </div>
         </div>
 
         <div class="delivery">
           <img class="delivery_icon" src="svgs/truck.svg" />
           <span class="delivery_text">Free delivery on orders over £30</span>
+        </div>
+      </div>
+
+      <div class="reviewsSection">
+        <div id="reviewsTitleBlockID" class="reviewsTitleBlock">
+          <span class="reviewsTitle">Title (to be edited)</span>
+          <span class="reviewsCount">Reviews: 0</span>
+        </div>
+
+        <div class="reviewsDisplay"></div>
+
+        <div class="addReviewSection">
+          <p>Add your review</p>
+          <div class="starRate">
+            <p>Star Rating</p>
+            <div class="ratingStars">
+              <span class="material-symbols-outlined"> star </span>
+              <span class="material-symbols-outlined"> star </span>
+              <span class="material-symbols-outlined"> star </span>
+              <span class="material-symbols-outlined"> star </span>
+              <span class="material-symbols-outlined"> star </span>
+            </div>
+          </div>
+
+          <div class="raterName">
+            <span>Your name:</span>
+            <div class="nameInput">
+              <input
+                id="usernameText"
+                type="text"
+                name="username"
+                placeholder="Enter your name"
+              />
+            </div>
+          </div>
+
+          <div class="review">
+            <span>Your review: </span>
+            <div id="reviewsInputID" class="reviewInput">
+              <input
+                id="reviewInputText"
+                type="text"
+                name="review"
+                placeholder="Type your review"
+              />
+            </div>
+          </div>
+          <div class="submitReview">
+            <button class="submitReviewButton" onclick="submit(this)">
+              Submit
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,4 @@
 from tic_tac_toe_model import *
-import random
-import sys
 
 def tic_tac_toe(player1_name, player2_name):
     GREEN = "\033[0;32m" 
@@ -11,8 +9,8 @@ def tic_tac_toe(player1_name, player2_name):
     player1 = player(player1_name)
     player2 = player(player2_name)
     players = random.sample([player1, player2], 2)
-    player1.symbol = GREEN + "X" + "\033[0m"
-    player2.symbol = CYAN + "O" + "\033[0m"
+    players[0].symbol = GREEN + "X" + "\033[0m"
+    players[1].symbol = CYAN + "O" + "\033[0m"
 
     match = game(player1, player2)
     match.game_intro()
@@ -27,7 +25,7 @@ def tic_tac_toe(player1_name, player2_name):
             random_move = random.choice(match.get_dimensions())
             while random_move in match.played:
                 random_move = random.choice(match.get_dimensions())
-            print("The random machine decided to play row:{}, column:{}".format(random_move[0], random_move[1]))
+            print("The random machine decided to play X:{}, Y:{}".format(random_move[0], random_move[1]))
             time.sleep(3)
             match.change_element(random_move[0], random_move[1], players[0].symbol)
             os.system('clear')
@@ -45,7 +43,7 @@ def tic_tac_toe(player1_name, player2_name):
                 match.draw_board()
                 possible_winner = players[0]
                 players = players[::-1]
-
+                
         else:
             print("\n{} it's your turn\nYour symbol is: {}".format(YELLOW + players[0].name + "\033[0m", players[0].symbol))
             x = input("Enter the number of row: ")
@@ -91,7 +89,7 @@ def tic_tac_toe(player1_name, player2_name):
 
 if __name__=="__main__":
     if len(sys.argv) not in [2, 3]:
-        print("Usage: python3 game.py <first_player_name> <second_player_name>")
+        print("Usage: python3 tic_tac_toe_game.py <first_player_name> <second_player_name>")
         sys.exit(1)
 
     elif len(sys.argv) == 2:

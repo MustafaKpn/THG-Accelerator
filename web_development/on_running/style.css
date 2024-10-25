@@ -6,8 +6,9 @@ html {
 /*------------- A -------------*/
 
 body {
-  width: 110rem;
+  /* width: 95rem; */
   margin: 1rem;
+  max-width: 100%;
 }
 .header {
   display: flex;
@@ -16,7 +17,8 @@ body {
   margin: 1rem;
   margin-left: 3rem;
   margin-right: 3rem;
-  width: 110rem;
+  /* width: 110rem; */
+  max-width: 100%;
 }
 .category {
   display: flex;
@@ -43,16 +45,43 @@ body {
   font-size: small;
   justify-content: flex-end;
 }
+
 .iconimage {
   display: block;
   margin-top: 25px;
   text-align: center;
 }
+.iconimage.cart {
+  display: flex;
+  flex-direction: block;
+  text-align: center;
+}
+
+.iconimage > .material-symbols-outlined {
+  font-size: 32px;
+}
+
+.iconimage > .cartQuantity {
+  color: white;
+  border: 0.1px solid black;
+  background-color: black;
+  border-radius: 1rem;
+  font-size: small;
+  padding: 2px 6px 2px 6px;
+  height: 1rem;
+}
+
 .icontext {
   margin: 1px;
 }
 .icontext p {
   margin: 3px;
+}
+
+.cartIcon {
+  padding: 1px;
+  margin-top: 5px;
+  margin-left: 3px;
 }
 /*-----------------------------*/
 
@@ -66,6 +95,7 @@ body {
   margin-top: 1rem;
   margin-left: 2rem;
   width: 40rem;
+  max-width: 100%;
 }
 .tags_header img {
   margin: auto 0;
@@ -76,10 +106,12 @@ body {
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 1rem;
+
   width: 110rem;
-  height: 70rem;
+  max-width: 100%;
+  max-height: 100%;
   margin-left: 3rem;
   margin-right: 3rem;
 }
@@ -94,6 +126,7 @@ body {
   height: 57rem;
   gap: 10px;
   margin-left: 3rem;
+  max-width: 100%;
 }
 /* 1.1 */
 .big_picture {
@@ -101,6 +134,7 @@ body {
   grid-row: 1;
   width: 47rem;
   height: 47rem;
+  max-width: 100%;
 
   img {
     width: 47rem;
@@ -113,6 +147,7 @@ body {
   grid-column: 1;
   grid-row: 2;
   width: 47rem;
+  max-width: 100%;
   height: 10rem;
   display: flex;
   justify-content: space-between;
@@ -133,6 +168,12 @@ body {
     border: 0.1px solid #b4b4b4;
     background-color: white;
   }
+
+  img:hover {
+    cursor: pointer;
+    border: 1px solid lightgray;
+    transition: 1ms;
+  }
 }
 
 /* ----- C2 ----- */
@@ -141,6 +182,7 @@ body {
   width: 55rem;
   height: 57rem;
   margin-bottom: 10rem;
+  max-width: 100%;
 }
 /* 1 */
 .onrunning_header {
@@ -266,13 +308,6 @@ body {
   margin-top: 3.5rem;
   gap: 1rem;
 
-  .add_wishlist button {
-    border-radius: 0.6rem;
-    border: transparent;
-    width: 4.5rem;
-    height: 4rem;
-  }
-
   .add_to_cart button {
     display: flex;
     align-items: center;
@@ -294,14 +329,25 @@ body {
   button:hover {
     background-color: lightgray;
     transition: 0.7s;
+    cursor: pointer;
   }
 }
 
-.add_wishlist {
-  button:hover {
-    border: 0.3rem solid red;
-    transition: 0.7s;
-  }
+.addToWishlistButton {
+  border-radius: 0.6rem;
+  border: transparent;
+  width: 4.5rem;
+  height: 4rem;
+  background-color: rgb(234, 234, 234);
+  max-width: 100%;
+}
+
+.addToWishlistButton:hover {
+  border: 1px solid lightgray;
+  transition: 1ms;
+  cursor: pointer;
+  background-color: rgb(211, 211, 211);
+  transition: 0.7s;
 }
 
 .delivery {
@@ -315,6 +361,133 @@ body {
     margin-right: 1rem;
   }
 }
+
+.reviewsSection {
+  display: flex;
+  flex-direction: column;
+}
+.reviewsTitleBlock {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 10px;
+  span {
+    padding: 5px;
+    margin: 5px;
+  }
+
+  .reviewsTitle {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.addReviewSection {
+  padding: 5px;
+  margin: 10px;
+
+  p {
+    padding: 5px;
+    margin: 5px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+.starRate {
+  display: flex;
+  flex-direction: row;
+
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+
+  .ratingStars {
+    padding-left: 3px;
+    padding: 5px;
+    margin: 5px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+  span {
+    font-size: 16px;
+  }
+}
+
+.raterName {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  margin: 5px;
+  font-size: 16px;
+  font-weight: bold;
+
+  span {
+    padding: 5px;
+    margin: 5px;
+  }
+  .nameInput {
+    padding: 5px;
+    margin: 5px;
+  }
+}
+
+.raterName > .nameInput > #usernameText {
+  width: 30rem;
+}
+.review {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+  .reviewInput {
+    padding: 5px;
+    margin: 5px;
+  }
+
+  span {
+    padding: 5px;
+    margin: 5px;
+  }
+}
+
+.review > .reviewInput > #reviewInputText {
+  width: 30rem;
+  height: 4rem;
+}
+.submitReview {
+  padding: 10px;
+  margin: 10px;
+}
+.submitReviewButton {
+  width: 100px;
+  height: 30px;
+  border: 0.2px solid lightgray;
+  background-color: black;
+  color: white;
+  border-radius: 0.3rem;
+  box-shadow: 0px 0px 2px 2px lightgray(0, 0, 0);
+  text-align: center;
+  cursor: pointer;
+}
+
+.submitReviewButton:hover {
+  background-color: lightgray;
+  color: black;
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+.horizontal-line {
+  height: 1px;
+  background-color: black;
+  width: 100%;
+  margin: 20px 0;
+}
+
 /*-----------------------------*/
 
 @media (max-width: 600px) {
@@ -431,4 +604,20 @@ body {
     padding: 10px;
     margin: 1rem;
   }
+}
+
+.disabled {
+  background-color: gray;
+  color: white;
+  pointer-events: none;
+}
+
+.onSaleText {
+  color: red;
+  margin: 0;
+}
+
+.newPrice {
+  display: flex;
+  flex-direction: row;
 }
