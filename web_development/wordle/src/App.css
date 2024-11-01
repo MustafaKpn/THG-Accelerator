@@ -1,0 +1,62 @@
+#root {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  max-width: 100%;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  padding: 1rem;
+  align-items: center;
+}
+
+.letter {
+  margin: 5px;
+  border-radius: 2px;
+  border: 2px solid black;
+  cursor: pointer;
+  height: 3rem;
+  min-width: 2.5rem;
+  max-width: 100%;
+}
+
+.letter:hover {
+  background-color: yellowgreen;
+  transition: 0.7s;
+}
+
+.delButton {
+  color: red;
+  background-color: lightgray;
+  font-weight: bold;
+}
+
+.delButton:hover {
+  background-color: red;
+  color: black;
+  transition: 0.7s;
+}
+
+.enterButton {
+  color: green;
+  background-color: lightgray;
+  font-weight: bold;
+}
+
+.enterButton:hover {
+  background-color: green;
+  color: black;
+  transition: 0.7s;
+}
